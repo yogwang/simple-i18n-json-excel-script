@@ -1,0 +1,16 @@
+{
+  "name": "simple-i18n-json2excel-script",
+  "description": "",
+  "keywords": [],
+  "version": "0.1.0",
+  "author": "yogwang",
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "excel": "node json2excel.js",
+    "json": "node excel2json.js"
+  },
+  "dependencies": {
+    "node-xlsx": "^0.23.0"
+  }
+}
