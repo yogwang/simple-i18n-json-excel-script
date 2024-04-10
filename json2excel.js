@@ -12,7 +12,7 @@ const loadLocalJSONFile = (localeName, filePath, encoding = 'utf-8') => {
   if(filePath) {
     console.log('load file:', filePath);
     try {
-      opt.localeData = JSON.parse(readFileSync(filePath, encoding))
+      opt.localeData = nested2flat(JSON.parse(readFileSync(filePath, encoding)))
       console.log(`----ok`);
     } catch (error) {
       console.log(`----fail: ${error}, set data to empty object`);
@@ -30,7 +30,7 @@ const targetLocale = loadLocalJSONFile('zh-cn', './source/zh-cn.json') // 修改
 const exportData = [
   // 表头，用于标识源语言和目标语言，也用于导入的使用和校验
   ['key', sourceLocale.localeName, targetLocale.localeName],
-  ...Object.entries(nested2flat(sourceLocale.localeData)).map(([key, value]) => {
+  ...Object.entries(sourceLocale.localeData).map(([key, value]) => {
     return [key, value, targetLocale.localeData[key] || '']
   })
 ]
