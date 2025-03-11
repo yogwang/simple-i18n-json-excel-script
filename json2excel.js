@@ -22,16 +22,19 @@ const loadLocalJSONFile = (localeName, filePath, encoding = 'utf-8') => {
 }
 
 // 源语言,将按照此语言的key值导出
-const sourceLocale = loadLocalJSONFile('ja', './source/ja.json') // 修改为你的源语言文件路径
+const sourceLocale = loadLocalJSONFile('zh', './source/zh-cn.json') // 修改为你的源语言文件路径
 // 目标语言, 用于维护新语言, 如果已经有目标语言文件, 也可以设置并输出在目标列
-const targetLocale = loadLocalJSONFile('zh-cn', './source/zh-cn.json') // 修改为你的目标语言文件路径(如果有)
+const targetLocales = [
+  loadLocalJSONFile('en', './source/en.json'), // 修改为你的目标语言文件路径(如果有)
+  loadLocalJSONFile('ja', './source/ja.json'), // 添加其他目标语言文件路径
+]
 
 // 处理导出数据
 const exportData = [
   // 表头，用于标识源语言和目标语言，也用于导入的使用和校验
-  ['key', sourceLocale.localeName, targetLocale.localeName],
+  ['key', sourceLocale.localeName, ...targetLocales.map(locale => locale.localeName)],
   ...Object.entries(sourceLocale.localeData).map(([key, value]) => {
-    return [key, value, targetLocale.localeData[key] || '']
+    return [key, value, ...targetLocales.map(locale => locale.localeData[key] || '')]
   })
 ]
 
