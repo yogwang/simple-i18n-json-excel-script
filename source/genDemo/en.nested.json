@@ -1,0 +1,28 @@
+{
+  "common": {
+    "base": {
+      "appName": "Test App",
+      "version": "1.0.0"
+    },
+    "button": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "form": {
+      "label": "Label",
+      "placeholder": "Placeholder",
+      "required": "Required"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome"
+    },
+    "about": {
+      "title": "About",
+      "desc": "About Us"
+    }
+  }
+}

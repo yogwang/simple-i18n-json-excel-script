@@ -1,0 +1,28 @@
+{
+  "common": {
+    "base": {
+      "appName": "测试应用",
+      "version": "1.0.0"
+    },
+    "button": {
+      "submit": "提交",
+      "cancel": "取消",
+      "save": "保存"
+    },
+    "form": {
+      "label": "标签",
+      "placeholder": "占位符",
+      "required": "必填"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "首页",
+      "welcome": "欢迎"
+    },
+    "about": {
+      "title": "关于",
+      "desc": "关于我们"
+    }
+  }
+}
