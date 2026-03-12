@@ -24,7 +24,7 @@ let tempLocalData = localeData.reduce((locale, rowData) => {
 
 // 循环生成对应语言的json文件
 Object.entries(tempLocalData).forEach(([lang, data]) => {
-  console.log(`generate ${lang}.json`);
+  console.log(`generate ${lang}.${JSON_TYPE}.json`);
   try {
     const isNested = JSON_TYPE === 'nested'
     const localeData = isNested ? flat2nested(data) : data
