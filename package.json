@@ -9,7 +9,8 @@
   "scripts": {
     "2excel": "node json2excel.js",
     "2json": "node excel2json.js",
-    "split-json": "node splitJsonByDepth.js"
+    "split-json": "node splitJsonByDepth.js",
+    "merge-json": "node mergeI18nData.js"
   },
   "dependencies": {
     "lodash": "^4.17.21",
